@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Wkrótce</title>
+<style type="text/css">
+		body, html {
+			height: 100%;
+			margin: 0;
+		}
+
+		#img {
+			background-image: url("naruto.jpg");
+			height: 100%;
+			background-position:center;
+			background-size: cover;
+			position: relative;
+			color: white;
+		}
+
+		#topleft {
+  			position: absolute;
+  			top: 0;
+  			left: 16px;
+		}
+
+		#bottomleft {
+  			position: absolute;
+  			bottom: 0;
+  			left: 16px;
+		}
+
+		#middle {
+  			position: absolute;
+  			top: 50%;
+  			left: 50%;
+  			transform: translate(-50%, -50%);
+  			text-align: center;
+		}
+
+h1 {
+	text-align: center;
+	color: white
+}
+
+hr {
+	margin: auto;
+	width: 70%;
+}
+
+</style>
+</head>
+<body>
+
+<div id="img">
+	<div id="topleft">
+	</div>
+	<div id="middle">
+		<h1>Wkrótce</h1>
+		<hr>
+		<p id="demo"></p>
+	</div>
+	<div id="bottomleft">
+		<p> Co to będzie??</p>
+	</div>
+
+<script type="text/javascript">
+	
+var countDownDate = new Date ("Nov 1, 2019 20:10:00").getTime();
+
+var countdownfunction = setInterval(function() {
+
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+  
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(countdownfunction);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+</script>
+
+</body>
+</html>
